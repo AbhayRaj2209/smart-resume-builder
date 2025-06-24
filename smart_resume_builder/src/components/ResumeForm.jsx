@@ -45,7 +45,7 @@ const ResumeForm = ({ setResumeData, setShowPreview }) => {
         ...form,
         suggestions,
       });
-      alert('✅ Resume Saved to DB!');
+      alert(' Resume Saved to DB!');
     } catch (error) {
       console.error('Error saving resume:', error);
     }
