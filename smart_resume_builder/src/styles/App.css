@@ -1,0 +1,12 @@
+/* src/styles/App.css */
+.app-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.resume-preview h3 {
+  margin-top: 20px;
+  color: #4f46e5;
+  font-size: 20px;
+}
