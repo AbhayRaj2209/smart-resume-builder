@@ -9,15 +9,15 @@ import Resume from '../models/Resume.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ✅ Load environment variables
+//  Load environment variables
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-// ✅ Initialize OpenAI
+//  Initialize OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// 🧠 AI Suggestion Controller
+//  AI Suggestion Controller
 export const getSuggestions = async (req, res) => {
   const { name, email, summary, education, experience, skills } = req.body;
 
@@ -48,14 +48,14 @@ Skills: ${skills}
     });
 
     const suggestion = response.choices[0].message.content;
-    res.json({ suggestions: suggestion }); // ✅ NOTE: 'suggestions'
+    res.json({ suggestions: suggestion }); //  NOTE: 'suggestions'
   } catch (error) {
-    console.error('❌ Error in getSuggestions:', error.message);
+    console.error(' Error in getSuggestions:', error.message);
     res.status(500).json({ error: 'Failed to get suggestions' });
   }
 };
 
-// 💾 Save Resume Controller
+// Save Resume Controller
 export const saveResume = async (req, res) => {
   const { name, email, resumeData } = req.body;
 
@@ -64,7 +64,7 @@ export const saveResume = async (req, res) => {
     await newResume.save();
     res.json({ message: 'Resume saved successfully' });
   } catch (error) {
-    console.error('❌ Error in saveResume:', error.message);
+    console.error(' Error in saveResume:', error.message);
     res.status(500).json({ error: 'Failed to save resume' });
   }
 };
